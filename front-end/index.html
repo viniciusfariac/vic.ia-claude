@@ -49,7 +49,7 @@
                     <h3>Vídeos</h3>
                 </summary>
                 <ul>
-                    <li><a href="#" onclick="mostrarVideo('assets/videos/exemplo1.mp4')">Vídeo 1</a></li>
+                    <li><a href="#" onclick="showVideo('assets/videos/exemplo1.mp4')">Vídeo 1</a></li>
                     <li><a href="#" onclick="mostrarVideo('assets/videos/exemplo1.mp4')">Vídeo 2</a></li>
                     <li><a href="#" onclick="mostrarVideo('assets/videos/exemplo1.mp4')">Vídeo 3</a></li>
                 </ul>
@@ -59,9 +59,9 @@
                     <h3>Maquete</h3>
                 </summary>
                 <ul>
-                    <li><a href="#" onclick="mostrarImagem('assets/img/bazinga.png')">Imagem Maquete 1</a></li>
-                    <li><a href="#" onclick="mostrarImagem('assets/img/bazinga.png')">Imagem Maquete 2</a></li>
-                    <li><a href="#" onclick="mostrarImagem('assets/img/bazinga.png')">Imagem Maquete 3</a></li>
+                    <li><a href="#" onclick="showImage('assets/img/xLogo.png')">Imagem Maquete 1</a></li>
+                    <li><a href="#" onclick="showImage('assets/img/xLogo.png')">Imagem Maquete 2</a></li>
+                    <li><a href="#" onclick="showImage('assets/img/xLogo.png')">Imagem Maquete 3</a></li>
                 </ul>
             </details>
             <section>
@@ -139,17 +139,35 @@
         <aside class="nav-menu">
             <ul>
                 <li><h3>Video</h3></li>
-                <li><a href="#">Video 1</a></li>
+                <li><a href="#" onclick="showVideo('assets/videos/exemplo1.mp4')">Vídeo 1</a></li>
                 <li><a href="#">Video 2</a></li>
                 <li><a href="#">Video 3</a></li>
             </ul>
             <ul>
-                <li><h3>Imagem</h3></li>
-                <li><a href="#">Imagem Maquete 1</a></li>
+                <li><h3>Maquetes</h3></li>
+                <li><a href="#" onclick="showImage('assets/img/xLogo.png')">Imagem Maquete 1</a></li>
                 <li><a href="#">Imagem Maquete 2</a></li>
                 <li><a href="#">Imagem Maquete 3</a></li>
             </ul>
         </aside>
+        <div id="overlayImagemContainer" class="overlay" onclick="closeOverlay()">
+            <div class="overlay-content" onclick="event.stopPropagation()">
+                <img id="overlayImage" src="" alt="Imagem Maquete" />
+                <p>Clique fora da imagem para fechar.</p>
+            </div>
+        </div>
+        
+        <div id="overlayVideoContainer" class="overlay" onclick="closeOverlay()">
+            <div class="overlay-content" onclick="event.stopPropagation()">
+                <video id="overlayVideo" width="400" controls>
+                    <source src="" type="video/mp4">
+                    <source src="" type="video/webm">
+                    <source src="" type="video/ogg">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+                <p>Clique fora do vídeo para fechar.</p>
+            </div>
+        </div>
     </main>
     <script src="assets/js/main.js" defer></script>
 </body>
