@@ -162,3 +162,41 @@ async function genereteContext() {
       }
   }
 }
+// Function to show an image in a modal overlay
+function showImage(imagemSrc) {
+    const overlay = document.getElementById("overlayImagemContainer");
+    const overlayImg = document.getElementById("overlayImage");
+    overlayImg.src = imagemSrc;
+
+    // Exibe o overlay
+    overlay.style.display = 'flex';
+    
+    // Aplica o blur ao fundo (ao conteúdo principal da página)
+    document.querySelector("main")?.classList.add("blur-background");
+}
+
+function showVideo(videoSrc) {
+    const overlay = document.getElementById("overlayVideoContainer");
+    const overlayVideo = document.getElementById("overlayVideo");
+    overlayVideo.src = videoSrc;
+
+    // Exibe o overlay
+    overlay.style.display = 'flex';
+    
+    // Aplica o blur ao fundo
+    document.querySelector("main")?.classList.add("blur-background");
+}
+
+function closeOverlay() {
+    const overlays = document.querySelectorAll(".overlay");
+    overlays.forEach((overlay) => {
+        overlay.style.display = 'none';
+    });
+
+    // Pausa o vídeo ao fechar o overlay
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video) => video.pause());
+
+    // Remove o blur de todo o fundo
+    document.querySelector("main")?.classList.remove("blur-background");
+}

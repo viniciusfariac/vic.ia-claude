@@ -11,9 +11,10 @@
     padding: 20px;
     box-sizing: border-box; /* Inclui o padding e as bordas no tamanho total */
     overflow: auto; /* Adiciona barra de rolagem caso necessário */
+    scrollbar-width: none;
     transition: opacity 0.3s ease-out;
     z-index: 1;
-    top: 490px;
+    top: 55vh;
 }
 
 .mobile-menu.open {
@@ -57,7 +58,29 @@
         -2px 2px 0px #5F4B7B;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 720px){
+    #overlayImg {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid white;
+        border-radius: 12px;
+    }
+    #overlayVideo {
+        width: 90%;
+        height: 200px;
+        border: 2px solid white;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    .overlay-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 70%;
+        overflow: auto;
+    }
     .icon {
         display: none;
     }
@@ -89,6 +112,223 @@
     }
     .part-bot .suggestions-bot ul {
         flex-wrap: nowrap;
+    }
+    .part-bot .suggestions-bot ul .suggestion-li{
+        font-size: 10px;
+        width: 170px; 
+    }
+
+    main .part-bot h2{
+        font-size: 1rem;
+        width: 100%;
+    }
+    main .part-bot .output-message{
+        width: 95%;
+    }
+    #companyName {
+        font-size: 3rem;
+    }
+    main .part-bot{
+        transition: opacity 1.5s ease-in-out;
+    }
+    main .part-bot.open{
+        display: none;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .suggestions-bot {
+        position: relative;
+        height: 100px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .suggestions-bot::-webkit-scrollbar {
+        display: none;
+    }
+    .part-bot{
+        padding: 20px 30px;
+        height: 80vh;
+    }
+    .logo{
+        width: 7rem;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        padding: 0;
+    }
+    .input-part {
+        width: 100%;
+    }
+}
+@media (min-width: 721px) and (max-width: 1024px) {
+    #overlayImg {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid white;
+        border-radius: 12px;
+    }
+    #overlayVideo {
+        width: 350px;
+        height: 200px;
+        border: 2px solid white;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    .overlay-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 70%;
+        overflow: auto;
+    }
+    .icon {
+        display: none;
+    }
+    header .nav-header {
+        display: none;
+    }
+    .icon-mobile {
+        display: flex;
+        padding-right:35px;
+    }
+    .content-nav-mobile{
+        display: block;
+        transition: opacity 1.5s ease-in-out;
+    }
+    #companyName {
+        font-size: 4rem;
+    }
+    main .part-bot{
+        width: 95%;
+    }
+    .part-bot .chat-bot {
+        width: 100%;
+    }
+    .part-bot .input-message{
+        width: 100%;
+    }
+    .part-bot .input-message .suggestions-bot{
+        width: 100%;
+    }
+    .part-bot .suggestions-bot ul {
+        flex-wrap: nowrap;
+        margin: 0 auto;
+    }
+    .part-bot .suggestions-bot ul .suggestion-li{
+        font-size: 10px;
+        width: 170px; 
+    }
+
+    main .part-bot h2{
+        font-size: 1rem;
+        width: 100%;
+    }
+    main .part-bot .output-message{
+        width: 95%;
+    }
+    #companyName {
+        font-size: 3rem;
+    }
+    main .part-bot{
+        transition: opacity 1.5s ease-in-out;
+    }
+    main .part-bot.open{
+        display: none;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .suggestions-bot {
+        position: relative;
+        height: 100px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .suggestions-bot::-webkit-scrollbar {
+        display: none;
+    }
+    .part-bot{
+        padding: 20px 30px;
+        height: 80vh;
+    }
+    .logo{
+        width: 7rem;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        padding: 0;
+    }
+    .input-part {
+        width: 100%;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1366px) {
+    #overlayImg {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid white;
+        border-radius: 12px;
+    }
+    #overlayVideo {
+        width: 350px;
+        height: 200px;
+        border: 2px solid white;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    .overlay-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 70%;
+        overflow: auto;
+    }
+    .icon {
+        display: none;
+    }
+    header .nav-header {
+        display: none;
+    }
+    .icon-mobile {
+        display: flex;
+        padding-right:35px;
+    }
+    .content-nav-mobile{
+        display: block;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .chat-bot #companyName {
+        font-size: 5rem;
+    }
+    main .part-bot{
+        width: 95%;
+    }
+    .part-bot .chat-bot {
+        width: 100%;
+    }
+    .part-bot .input-message{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .part-bot .input-message .suggestions-bot{
+        width: 100%;
+    }
+    .part-bot .suggestions-bot ul {
+        flex-wrap: nowrap;
+        margin: 0 auto;
     }
     .part-bot .suggestions-bot ul .suggestion-li{
         font-size: 10px;
