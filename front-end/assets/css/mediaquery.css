@@ -1,0 +1,144 @@
+.mobile-menu {
+    display: none;
+    position: fixed; /* Fixa o menu em relação à tela */
+    background-color: #231932;
+    border: 2px solid #7A5EA0;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Garante o alinhamento perfeito */
+    height: 80%; /* Ajusta a altura para não ocupar toda a tela */
+    width: 85%; /* Largura relativa ao viewport */
+    padding: 20px;
+    box-sizing: border-box; /* Inclui o padding e as bordas no tamanho total */
+    overflow: auto; /* Adiciona barra de rolagem caso necessário */
+    transition: opacity 0.3s ease-out;
+    z-index: 1;
+    top: 490px;
+}
+
+.mobile-menu.open {
+    display: grid;
+    grid-column: 200px 200px;
+    grid-template-columns: 2;
+    animation: show-menu 0.5s ease-out forwards;
+    opacity: 1;
+}
+/* Outras regras permanecem as mesmas */
+.mobile-menu ul li {
+    margin: 1.5rem 0;
+}
+
+.mobile-menu ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    opacity: 0.8;
+    transition: 1s;
+}
+
+.mobile-menu ul li a:hover {
+    opacity: 1;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.mobile-menu details summary h3 {
+    font-size: 30px;
+    font-family: 'FlastyTrial', sans-serif;
+    margin: 1rem 0;
+    color: #FFF;
+    cursor: pointer;
+    text-shadow:
+        2px 2px 0px #5F4B7B,
+        -2px -2px 0px #5F4B7B,
+        2px -2px 0px #5F4B7B,
+        -2px 2px 0px #5F4B7B;
+}
+
+@media (max-width: 720px) {
+    .icon {
+        display: none;
+    }
+    header .nav-header {
+        display: none;
+    }
+    .icon-mobile {
+        display: flex;
+        padding-right:35px;
+    }
+    .content-nav-mobile{
+        display: block;
+        transition: opacity 1.5s ease-in-out;
+    }
+    #companyName {
+        font-size: 3rem;
+    }
+    main .part-bot{
+        width: 95%;
+    }
+    .part-bot .chat-bot {
+        width: 100%;
+    }
+    .part-bot .input-message{
+        width: 100%;
+    }
+    .part-bot .input-message .suggestions-bot{
+        width: 100%;
+    }
+    .part-bot .suggestions-bot ul {
+        flex-wrap: nowrap;
+    }
+    .part-bot .suggestions-bot ul .suggestion-li{
+        font-size: 10px;
+        width: 170px; 
+    }
+
+    main .part-bot h2{
+        font-size: 1rem;
+        width: 100%;
+    }
+    main .part-bot .output-message{
+        width: 95%;
+    }
+    #companyName {
+        font-size: 3rem;
+    }
+    main .part-bot{
+        transition: opacity 1.5s ease-in-out;
+    }
+    main .part-bot.open{
+        display: none;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .suggestions-bot {
+        position: relative;
+        height: 100px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .suggestions-bot::-webkit-scrollbar {
+        display: none;
+    }
+    .part-bot{
+        padding: 20px 30px;
+        height: 80vh;
+    }
+    .logo{
+        width: 7rem;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        padding: 0;
+    }
+    .input-part {
+        width: 100%;
+    }
+}

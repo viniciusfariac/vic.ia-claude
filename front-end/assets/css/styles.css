@@ -1,0 +1,454 @@
+@import url(../css/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'FlastyTrial';
+    src: url('../fonts/flasty-font-1731417075-0/FLASTY-Trial-BF656694f78e2cd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url(../img/background.png);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 80%;
+    height: 10rem;
+}
+header .logo{
+    max-height: 170px;
+    cursor: pointer;
+}
+header .nav-header {
+    display: flex;
+    justify-content: space-between;  /* Aqui, usei space-between para o espaço entre os elementos */
+    align-items: center;
+    border: 1px solid #5F4B7B;
+    background: #0B0B1D;
+    clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0 100%); /* Ajuste significativo aqui */
+    padding: 2rem 9rem;
+    margin: 0;
+    height: 60px;
+    position: relative; /* Para garantir o posicionamento correto */
+}
+
+header .nav-header ul {
+    display: flex;
+    justify-content: space-between;  /* Agora, isso vai distribuir os itens com o máximo de espaço */
+    gap: 90px;  /* Ajuste do espaçamento entre os itens */
+    color: white;
+    padding: 0;  /* Removi o padding excessivo */
+    margin: 0;  /* Adicionei margin: 0 para garantir que o espaço não seja alterado por margens */
+    width: 100%;  /* Isso vai garantir que a lista ocupe toda a largura disponível */
+}
+header .content-nav button{
+    border: none;
+    background-color: transparent;
+}
+header .content-nav .icon{
+    max-height: 40px;
+    cursor: pointer;
+    transition: transform 1.5s ease-in-out;
+    transform-origin: center;  /* Gira o ícone ao redor do centro */
+}
+
+.icon-mobile {
+    border: none;
+    background-color: transparent;
+    max-height: 40px;
+    cursor: pointer;
+    transition: transform 1.5s ease-in-out;
+    transform-origin: center;
+}
+
+.mobile-menu {
+    display: none;
+}
+.content-nav-mobile{
+    display: none;
+}
+.nav-menu.open .icon {
+    transform: rotate(180deg);  /* Exemplo de rotação ao abrir o menu */
+}
+.nav-header .nav-list{
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+.nav-header .nav-list a:hover{
+    transform: scale(1.2);
+    transition: 0.7s;
+}
+.nav-header .nav-list a{
+    color: white;
+    display: inline-block;
+    transition: 0.7s;
+    font-family: "Anonymous Pro", monospace;
+    text-transform: uppercase;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+.part-bot,
+aside{
+    border: 1px solid #7A5EA0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    animation: borderGlowMove 3s infinite;
+
+}
+
+.part-bot {
+    height: 34rem;
+    width: 70%;
+    transition: width 0.5s ease;
+    z-index: 0;
+}
+
+.part-bot .chat-bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.part-bot.open h2,
+.part-bot.open,
+.part-bot.open h1,
+.part-bot,
+.part-bot h2,
+.part-bot h1{
+    transition: 1.0s;
+}
+.output-message, 
+.input-part{
+    width: 80%;
+}
+.part-bot .output-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+.part-bot .output-message figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.part-bot .input-message{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-direction: column;
+}
+.part-bot .input-part{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #32213E;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+.part-bot .output-message .icon-bot{
+    width: 100px;
+}
+.part-bot .output-message h2{
+    font-size: 1.1rem;
+    font-family: "Anonymous Pro", monospace;
+    color: #FFF;
+    font-weight: normal;
+}
+.input-part form{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.input-part .file-image,
+.input-part .input-mic{
+    color: #FFF;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.part-bot .input-part form input::placeholder{
+    color: #858585;
+}
+.part-bot .input-part form input{
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #FFF;
+    width: 80%;
+}
+.part-bot .input-part form button{
+    border: none;
+    background: transparent;
+}
+.part-bot .suggestions-bot ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem; /* Aumente o gap para ajustar o alinhamento */
+    row-gap: 1rem; /* Espaçamento entre as linhas */
+}
+.part-bot .suggestions-bot ul li a{
+    font-size: 13px;
+    color: #FFF;
+    font-family: "Anonymous Pro", monospace;
+    padding: 1rem;
+    background-color: #32213E;
+    border-radius: 2rem;
+    display: inline-block; /* Permite que o scale funcione corretamente */
+    transition: transform 0.8s ease-in-out;
+}
+.part-bot .suggestions-bot ul li:hover{
+    font-weight: bold;
+    transform: scale(1.1);
+    display: inline-block;
+    transition: 0.7s;
+}
+.part-bot .suggestions-bot ul li a:hover{
+    border: 2px solid #FFF;
+    transform: scale(1.1);
+    transition: 0.7s;
+}
+.nav-menu {
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 2.2s ease-in-out; /* Transição mais lenta e suave */
+ }
+ 
+.nav-menu.open {
+    display: block;
+    opacity: 1;
+    transition: opacity 2.2s ease-in-out; /* Transição mais lenta e suave */
+}
+.nav-menu.open li:nth-child(1){
+    text-shadow:
+    2px 2px 0px #5F4B7B,
+    -2px -2px 0px #5F4B7B,
+    2px -2px 0px #5F4B7B,
+    -2px 2px 0px #5F4B7B;
+}
+.part-bot h1{
+    z-index: -1;
+    font-weight: bold;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px rgba(2555, 255, 255, 0.3);
+    font-family: 'FlastyTrial';
+    text-align: center;
+    font-size: 5.0rem;
+    letter-spacing: 5px;
+    transition: opacity 1.5s ease-in-out;  /* Transição mais longa (1.5s) */
+}
+
+#companyName {
+    z-index: -1;
+}
+
+.output-message {
+    z-index: 1;
+}
+
+.part-bot.open h1{
+    font-size: 3rem;
+    transition: opacity 1.5s ease-in-out;  /* Transição mais longa (1.5s) */
+}
+.part-bot.open{
+    width: 50%;
+}
+.part-bot.open .suggestions-bot{
+    width: 80%;
+}
+.part-bot.open li{
+    font-size: 5px;
+    font-family: 'Anonymous Pro', monospace;
+}
+.part-bot 
+.content-aside {
+    display: none;
+}
+
+aside {
+    width: 25%;
+    height: 34rem;
+    transition: margin-left 0.9s ease;
+}
+
+.nav-menu.open{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+    
+.nav-menu.open ul{
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-size: 1.3rem;
+}
+.nav-menu.open li:first-child{
+    text-align: center;
+    padding-bottom: 1.3rem;
+    font-family: "FlastyTrial", sans-serif;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: white; /* Cor do texto */
+    font-size: 24px; /* Tamanho do texto */
+    text-shadow:
+        -2px -2px 0 #5F4B7B,
+         2px -2px 0 #5F4B7B,
+        -2px  2px 0 #5F4B7B,
+         2px  2px 0 #5F4B7B,
+        -2px  0px 0 #5F4B7B,
+         2px  0px 0 #5F4B7B,
+         0px  2px 0 #5F4B7B,
+         0px -2px 0 #5F4B7B;
+}
+.nav-menu.open a {
+    color: #fff;
+    display: inline-block; /* Permite que o scale funcione corretamente */
+    transition: transform 0.8s ease-in-out;
+}
+
+.nav-menu.open a:hover {
+    transform: scale(1.3);
+    display: inline-block;
+    transition: 0.7s;
+}
+.nav-menu.open a:hover{
+    transform: scale(1.2);
+    transition: 0.7s;
+}
+.greeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+@keyframes borderGlowMove {
+    0% {
+      box-shadow: 0 0 5px #5F4B7B, 0 0 10px #5F4B7B, 0 0 0px #6A4C93;
+    }
+    25% {
+      box-shadow: 5px 0 10px #5F4B7B, 5px 0 20px #6A4C93, 0 0 0px #6A4C93;
+    }
+    50% {
+      box-shadow: 0 5px 10px #5F4B7B, 0 5px 20px #6A4C93, 0 0 0px #6A4C93;
+    }
+    75% {
+      box-shadow: -5px 0 10px #5F4B7B, -5px 0 20px #6A4C93, 0 0 0px #6A4C93;
+    }
+    100% {
+      box-shadow: 0 0 5px #5F4B7B, 0 0 10px #5F4B7B, 0 0 0px #6A4C93;
+    }
+  }
+
+  .role-bot .text,
+.role-user .text {
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Garante que palavras longas sejam quebradas */
+    word-break: break-word;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #5F4B7B;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+/* Estilos específicos para elementos gerados pelo markdown */
+.role-bot .text {
+    /* Para links longos */
+    a {
+        word-break: break-all;
+    }
+
+    /* Para blocos de código */
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 16px;
+        border-radius: 6px;
+        background-color: #090909;
+    }
+
+    /* Para código inline */
+    code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 2px 0;
+        border-radius: 4px;
+    }
+
+    /* Para tabelas */
+    table {
+        max-width: 100%;
+        overflow-x: auto;
+        display: block;
+        border-collapse: collapse;
+    }
+
+    /* Para imagens */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Para listas */
+    ul, ol {
+        padding-left: 20px;
+        margin: 8px 0;
+    }
+
+    /* Para parágrafos */
+    p {
+        margin: 8px 0;
+        line-height: 1.5;
+    }
+}
+
+.text {
+    color: #fff;
+    z-index: 9999999;
+}
+
+/* Ajuste para containers de mensagens */
+.role-bot,
+.role-user {
+    width: 100%;
+    display: flex;
+    margin: 8px 0;
+    z-index: 999999999;
+}
+
+.role-bot {
+    justify-content: flex-start;
+}
+
+.role-user {
+    justify-content: flex-end;
+}

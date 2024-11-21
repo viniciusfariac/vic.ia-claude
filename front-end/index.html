@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mediaquery.css">
+
+    <title>Vic ia</title>
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="assets/img/logoVic.png" alt="Logo do Colegio Victorino" class="logo">
+        </figure>
+        <nav class="nav-header">
+            <ul>
+                <li class="nav-list"><a href="">Research</a></li>
+                <li class="nav-list"><a href="">Company</a></li>
+                <li class="nav-list"><a href="">Products</a></li>
+                <li class="nav-list"><a href="">Safety</a></li>
+            </ul>
+        </nav>
+        <figure class="content-nav">
+            <button onclick="menuShow()">
+                <img src="assets/img/hamburguinho.png" alt="image of hamburguinho" class="icon">
+            </button>
+        </figure>
+        <figure class="content-nav-mobile content-nav">
+            <button onclick="menuShowMobile()">
+                <img src="assets/img/hamburguinho.png" alt="image of hamburguinho" class="icon-mobile">
+            </button>
+        </figure>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#" onclick="showDiv('nav-research')">RESEARCH</a></li>
+                <li><a href="#">COMPANY</a></li>
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">SAFETY</a></li>
+            </ul>
+            <details>
+                <summary>
+                    <h3>Vídeos</h3>
+                </summary>
+                <ul>
+                    <li><a href="#" onclick="mostrarVideo('assets/videos/exemplo1.mp4')">Vídeo 1</a></li>
+                    <li><a href="#" onclick="mostrarVideo('assets/videos/exemplo1.mp4')">Vídeo 2</a></li>
+                    <li><a href="#" onclick="mostrarVideo('assets/videos/exemplo1.mp4')">Vídeo 3</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>
+                    <h3>Maquete</h3>
+                </summary>
+                <ul>
+                    <li><a href="#" onclick="mostrarImagem('assets/img/bazinga.png')">Imagem Maquete 1</a></li>
+                    <li><a href="#" onclick="mostrarImagem('assets/img/bazinga.png')">Imagem Maquete 2</a></li>
+                    <li><a href="#" onclick="mostrarImagem('assets/img/bazinga.png')">Imagem Maquete 3</a></li>
+                </ul>
+            </details>
+            <section>
+            <div id="nav-research" class="overlay" style="display: none;">
+                <div class="overlay-content">
+                    <h2>Research Information</h2>
+                    <p>Conteúdo relacionado à pesquisa...</p>
+                    <button onclick="closeOverlay('nav-research')">Fechar</button>
+                </div>
+            </div>
+            
+            <div id="nav-company" class="overlay" style="display: none;">
+                <div class="overlay-content">
+                    <h2>Company Information</h2>
+                    <p>Conteúdo relacionado à empresa...</p>
+                    <button onclick="closeOverlay('nav-company')">Fechar</button>
+                </div>
+            </div>
+            
+            <div id="nav-products" class="overlay" style="display: none;">
+                <div class="overlay-content">
+                    <h2>Product Information</h2>
+                    <p>Conteúdo relacionado ao produto...</p>
+                    <button onclick="closeOverlay('nav-products')">Fechar</button>
+                </div>
+            </div>
+            
+            <div id="nav-safety" class="overlay" style="display: none;">
+                <div class="overlay-content">
+                    <h2>Safety Information</h2>
+                    <p>Conteúdo relacionado à segurança...</p>
+                    <button onclick="closeOverlay('nav-safety')">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <section class="part-bot" id="partBot">
+            <div class="chat-bot">
+                <div class="output-message">
+                    <div class="greeting">
+                        <figure clas="image-bgc">
+                            <img src="assets/img/iconBot.png" alt="image of the bot ia" class="icon-bot">
+                        </figure>
+                        <div class="output-part" id="outputPart">
+                            <h2 id="reveal-title"></h2>
+                        </div>
+                    </div>
+                </div>
+                <h1 id="companyName">Colegio Victorino</h1>
+                <div class="input-message">
+                    <div class="input-part">
+                        <form >
+                            <input type="text" placeholder="Message VIC IA." maxlength="60" id="prompt" required>
+                            <button class="file-image">
+                                <i class="ri-image-fill" class="icon"></i>
+                            </button>
+                            <button class="input-mic">
+                                <i class="ri-mic-fill" class="icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="suggestions-bot" id="suggestion">
+                        <ul>
+                            <li><a href="#" class="suggestion-li">📚   Sobre o curso técnico</a></li>
+                            <li><a href="#" class="suggestion-li">💭  Como você foi feito?</a></li>
+                            <li><a href="#" class="suggestion-li" onclick="trocarConteudo()">🖼️  Crie uma imagem</a></li>
+                            <li><a href="#" class="suggestion-li">🎲  Surpreenda-me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <aside class="nav-menu">
+            <ul>
+                <li><h3>Video</h3></li>
+                <li><a href="#">Video 1</a></li>
+                <li><a href="#">Video 2</a></li>
+                <li><a href="#">Video 3</a></li>
+            </ul>
+            <ul>
+                <li><h3>Imagem</h3></li>
+                <li><a href="#">Imagem Maquete 1</a></li>
+                <li><a href="#">Imagem Maquete 2</a></li>
+                <li><a href="#">Imagem Maquete 3</a></li>
+            </ul>
+        </aside>
+    </main>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
