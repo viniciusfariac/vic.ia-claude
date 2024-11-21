@@ -16,7 +16,7 @@ O projeto é composto por três protótipos, sendo este o **protótipo 2**. O ob
 
 Este é o segundo protótipo desenvolvido para o site. Abaixo está uma imagem do protótipo 2:
 
-![alt text](image.png)
+![alt text](/front-end/assets/img/prototipo/image.png)
 
 ## Colaboradores
 
