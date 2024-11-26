@@ -22,6 +22,7 @@ Este é o segundo protótipo desenvolvido para o site. Abaixo está uma imagem d
 
 - **Vinicius Faria** ([@viniciusfariac](https://github.com/viniciusfariac))
 - **Lucas Uchida** ([@lucas-uchida](https://github.com/lennoxP))
+- **Luiz phelipe** ([@luiz-phelipe](https://github.com/luiz0ph))
 
 ## Como Rodar o Projeto
 
