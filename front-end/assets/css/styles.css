@@ -104,19 +104,35 @@ main{
     gap: 5rem;
 }
 .part-bot,
-aside{
-    border: 1px solid #7A5EA0;
-    background-color: rgba(0, 0, 0, 0.5);
+aside.nav-menu.open{
+    border: 2px solid #5F4B7B;
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 2rem;
-    animation: borderGlowMove 3s infinite;
-
+    --glow-color: rgb(194, 132, 255);
+    --glow-spread-color: rgba(180, 110, 255, 0.75);
+    --enhanced-glow-color: rgb(240, 220, 255);
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 
+    0 0 1em .25em var(--glow-color),
+    0 0 2em 0.5em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .part-bot {
     height: 34rem;
     width: 70%;
+    overflow: hidden; /* Prevents overflow issues */
+    overflow-y: auto; /* Enables vertical scrolling */
     transition: width 0.5s ease;
-    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px); /* Subtle blur effect */
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 5px;
 }
 
@@ -128,6 +144,32 @@ aside{
     width: 100%;
     z-index: 1;
 }
+
+/* Custom scroll for the chat container */
+.output-message::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output-message::-webkit-scrollbar-track {
+    background: rgba(48, 30, 64, 0.6); /* Tom escuro com leve transparência */
+    border-radius: 10px;
+}
+
+.output-message::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5F4B7B, #C084FC); /* Gradiente sutil de roxo a lilás */
+    border-radius: 10px;
+    border: 2px solid rgba(48, 30, 64, 0.6); /* Integra com a track */
+}
+
+.output-message::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #9F7CEB, #D9B7FF); /* Tons mais claros ao interagir */
+}
+
+.output-message::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(180deg, #BFB1FF, #E3D9FF); /* Destacado, mas suave */
+}
+
+
 .part-bot.open h2,
 .part-bot.open,
 .part-bot.open h1,
@@ -139,22 +181,12 @@ aside{
 .output-message{
     overflow-y: scroll;
     margin: 0 auto;
-    scrollbar-width: none;
-    max-height: none;
 }
 .output-message, 
 .input-part{
     width: 80%;
 }
-.part-bot .output-message{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex-direction: column;
-}
+
 .part-bot .output-message figure{
     display: flex;
     justify-content: center;
