@@ -1,6 +1,6 @@
 # Projeto VIC AI
 
-Este é um projeto desenvolvido para criar uma inteligência artificial (IA) personalizada para o Colégio Victorino utilizando a API do ChatGPT. O objetivo é criar uma interface que ajude os alunos e usuários do site, oferecendo funcionalidades como responder perguntas e gerar imagens.
+Este é um projeto desenvolvido para criar uma inteligência artificial (IA) personalizada para o Colégio Victorino utilizando a API do Gemini. O objetivo é criar uma interface que ajude os alunos e usuários do site, oferecendo funcionalidades como responder perguntas e gerar imagens.
 
 ## Descrição
 
@@ -10,7 +10,7 @@ O projeto é composto por três protótipos, sendo este o **protótipo 2**. O ob
 
 - **HTML**: Para a estruturação do conteúdo da página.
 - **CSS**: Para o design e estilização da interface.
-- **JavaScript**: Para a funcionalidade interativa, incluindo a integração com a API do Claude.ai.
+- **JavaScript**: Para a funcionalidade interativa, incluindo a integração com a API do Gemini.ia.
 
 ## Protótipos
 
@@ -28,4 +28,4 @@ Este é o segundo protótipo desenvolvido para o site. Abaixo está uma imagem d
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/viniciusfariac/vic.ai-claude.git
+   git clone https://github.com/viniciusfariac/vic.ai-gemini.git
