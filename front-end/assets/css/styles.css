@@ -31,13 +31,20 @@ header .nav-header {
     display: flex;
     justify-content: space-between;  /* Aqui, usei space-between para o espaço entre os elementos */
     align-items: center;
-    border: 1px solid #5F4B7B;
-    background: #0B0B1D;
     clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0 100%); /* Ajuste significativo aqui */
     padding: 2rem 9rem;
     margin: 0;
     height: 60px;
     position: relative; /* Para garantir o posicionamento correto */
+    clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0 100%);
+    border: 2px solid #7A5EA0;
+    background-color: #110a18;
+    --glow-color: rgb(168, 103, 230);
+    --glow-spread-color: rgba(166, 88, 240, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+            0 0 2em 0.5em var(--glow-spread-color),
+            inset 0 0 .75em .25em var(--glow-color);
 }
 
 header .nav-header ul {
