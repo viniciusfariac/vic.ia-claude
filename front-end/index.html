@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/mediaquery.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css">
     <title>Vic ia</title>
 </head>
 <body>
@@ -21,12 +22,47 @@
         </figure>
         <nav class="nav-header">
             <ul>
-                <li class="nav-list"><a href="">Research</a></li>
-                <li class="nav-list"><a href="">Company</a></li>
-                <li class="nav-list"><a href="">Products</a></li>
-                <li class="nav-list"><a href="">Safety</a></li>
+                <li class="nav-list"><a href="#" onclick="showDiv('nav-research')">Research</a></li>
+                <li class="nav-list"><a href="#" onclick="showDiv('nav-company')">Company</a></li>
+                <li class="nav-list"><a href="#" onclick="showDiv('nav-products')">Products</a></li>
+                <li class="nav-list"><a href="#" onclick="showDiv('nav-safety')">Safety</a></li>
             </ul>
         </nav>
+        <!-- Research information overlay -->
+        <div id="nav-research" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h2>Informações de Pesquisa</h2>
+                <p>O Colégio Victorino realiza diversas pesquisas educacionais focadas no desenvolvimento de metodologias de ensino inovadoras, visando a melhoria da aprendizagem dos alunos. As pesquisas abordam temas como tecnologia na educação, novas técnicas pedagógicas, e o impacto de atividades extracurriculares no desempenho escolar.</p>
+                <button onclick="closeOverlay('nav-research')">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Company information overlay -->
+        <div id="nav-company" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h2>Informações sobre o Colégio Victorino</h2>
+                <p>O Colégio Victorino é uma instituição de ensino com mais de 20 anos de tradição na educação básica. Seu compromisso é oferecer um ensino de qualidade, com uma infraestrutura moderna e corpo docente altamente qualificado. Localizado em Itaim Paulista, o colégio atende alunos desde a educação infantil até o ensino médio, preparando-os para os desafios do futuro.</p>
+                <button onclick="closeOverlay('nav-company')">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Product information overlay -->
+        <div id="nav-products" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h2>Informações sobre Produtos Educacionais</h2>
+                <p>O Colégio Victorino oferece uma série de produtos educacionais, como cursos extracurriculares, atividades complementares, e materiais didáticos desenvolvidos para melhorar o desempenho acadêmico. Além disso, a escola disponibiliza recursos tecnológicos como plataformas de aprendizagem online, aplicativos educativos e espaços de estudo colaborativo.</p>
+                <button onclick="closeOverlay('nav-products')">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Safety information overlay -->
+        <div id="nav-safety" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h2>Informações sobre Segurança</h2>
+                <p>O Colégio Victorino adota rigorosos protocolos de segurança para garantir o bem-estar de seus alunos e funcionários. A escola conta com vigilância 24 horas, equipes treinadas para agir em situações de emergência, e protocolos de saúde que seguem as orientações das autoridades locais. Além disso, a escola promove ações educativas sobre segurança pessoal e prevenção de acidentes.</p>
+                <button onclick="closeOverlay('nav-safety')">Fechar</button>
+            </div>
+        </div>
         <figure class="content-nav">
             <button onclick="menuShow()">
                 <img src="assets/img/hamburguinho.png" alt="image of hamburguinho" class="icon">
@@ -119,17 +155,17 @@
                             <button class="file-image" type="button">
                                 <i class="ri-image-fill" class="icon"></i>
                             </button>
-                            <button class="input-mic" type="submit">
-                                <i class="ri-mic-fill" class="icon"></i>
+                            <button class="send-place" id="btn-submit" type="submit">
+                                <i class="ri-send-plane-2-fill"></i>
                             </button>
                         </form>
                     </div>
                     <div class="suggestions-bot" id="suggestion">
                         <ul>
-                            <li><a href="#" class="suggestion-li">📚   Sobre o curso técnico</a></li>
-                            <li><a href="#" class="suggestion-li">💭  Como você foi feito?</a></li>
+                            <li><a href="#" class="suggestion-li" onclick="setMessage('Me explique sobre o Curso técnico')">📚   Sobre o curso técnico</a></li>
+                            <li><a href="#" class="suggestion-li" onclick="setMessage('Como você foi feito?')">💭  Como você foi feito?</a></li>
                             <li><a href="#" class="suggestion-li" onclick="trocarConteudo()">🖼️  Crie uma imagem</a></li>
-                            <li><a href="#" class="suggestion-li">🎲  Surpreenda-me</a></li>
+                            <li><a href="#" class="suggestion-li" onclick="setMessage('Surpreenda-me')">🎲  Surpreenda-me</a></li>
                         </ul>
                     </div>
                 </div>
