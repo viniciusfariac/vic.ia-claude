@@ -152,7 +152,7 @@
                     <div class="input-part">
                         <form id="gemini-ia">
                             <input type="text" placeholder="Message VIC IA." maxlength="60" id="prompt" required>
-                            <button class="file-image" type="button">
+                            <button class="file-image" type="button" hidden>
                                 <i class="ri-image-fill" class="icon"></i>
                             </button>
                             <button class="send-place" id="btn-submit" type="submit">
@@ -164,13 +164,30 @@
                         <ul>
                             <li><a href="#" class="suggestion-li" onclick="setMessage('Me explique sobre o Curso técnico')">📚   Sobre o curso técnico</a></li>
                             <li><a href="#" class="suggestion-li" onclick="setMessage('Como você foi feito?')">💭  Como você foi feito?</a></li>
-                            <li><a href="#" class="suggestion-li" onclick="trocarConteudo()">🖼️  Crie uma imagem</a></li>
+                            <li><a href="#" class="suggestion-li" onclick="showDiv('partPaid')">🖼️  Crie uma imagem</a></li>
                             <li><a href="#" class="suggestion-li" onclick="setMessage('Surpreenda-me')">🎲  Surpreenda-me</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+        <div id="partPaid" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h2>Opa! Acesso Negado.</h2>
+                    <p>Você está tentando acessar uma área exclusiva para usuários Premium. 😕 </p>
+                    <p>Mas não se preocupe, é fácil liberar esse conteúdo!</p>
+                <h2>🔒 Como desbloquear?</h2>
+                    <p>Basta assinar a versão Premium para acessar todas as funcionalidades incríveis e continuar a aproveitar o poder da nossa plataforma.</p>
+                <h2>Vantagens da versão Premium</h2>
+                    <ul>
+                        <li>Criação ilimitada de imagens</li>
+                        <li>Acesso a conteúdos exclusivos</li>
+                        <li>E muito mais!</li>
+                    </ul>
+                    <p>Não perca mais tempo, aproveite as vantagens agora mesmo! 😉</p>
+                <button onclick="closeOverlay('partPaid')">Fechar</button>
+            </div>
+        </div>
         <aside class="nav-menu">
             <ul>
                 <li><h3>Video</h3></li>
@@ -186,15 +203,15 @@
             </ul>
         </aside>
         <div id="overlayImagemContainer" class="overlay" onclick="closeOverlay()">
-            <div class="overlay-content" onclick="event.stopPropagation()">
+            <div onclick="event.stopPropagation()">
                 <img id="overlayImage" src="" alt="Imagem Maquete" />
                 <p>Clique fora da imagem para fechar.</p>
             </div>
         </div>
         
         <div id="overlayVideoContainer" class="overlay" onclick="closeOverlay()">
-            <div class="overlay-content" onclick="event.stopPropagation()">
-                <video id="overlayVideo" width="400" controls>
+            <div onclick="event.stopPropagation()">
+                <video id="overlayVideo" width="400" controls autoplay>
                     <source src="" type="video/mp4">
                     <source src="" type="video/webm">
                     <source src="" type="video/ogg">
