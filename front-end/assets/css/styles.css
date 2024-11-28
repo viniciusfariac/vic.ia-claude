@@ -418,7 +418,9 @@ aside {
     padding: 1rem;
     border-radius: 15px;
 }
-
+.role-user .text {
+    border: 2px solid #fff;
+}
 /* Estilos específicos para elementos gerados pelo markdown */
 .role-bot .text {
     /* Para links longos */
