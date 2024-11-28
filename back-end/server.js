@@ -39,7 +39,7 @@ renderer.table = function(header, body) {
 marked.setOptions({ renderer });
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY); // IA
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Model.
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // Model.
 
 // Router
 app.post('/generate-content', async (req, res) => {
